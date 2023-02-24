@@ -24,12 +24,13 @@ contract TodoList {
   );
 
   constructor() public {
-    createTask("Check out dappuniversity.com");
+    createTask("Check out your routine");
   }
 
   function createTask(string memory _content) public {
     taskCount ++;
     tasks[taskCount] = Task(taskCount, _content, false);
+   //broadcast an event 
     emit TaskCreated(taskCount, _content, false);
   }
 
